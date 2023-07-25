@@ -10,5 +10,6 @@ Frequently used EPSG codes for countries
 | France        | 2154          | 5720     | 5698     |
 | Israel        | 2039          | 5733     | ?        |
 | Netherlands   | 28992         | 5709     | 7415     |
-| Norway        | 25833         | 5941       | ?      |
-| United Kingdom| 27700         | 5701     | 7405     |
+| Norway        | 25833         | 5941     | ?        |
+| Spain         | 2062          | ?        | ?        |
+| United  ingdom| 27700         | 5701     | 7405     |
