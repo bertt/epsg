@@ -13,4 +13,4 @@ Frequently used EPSG codes for countries
 | Norway        | 25833         | 5941     | ?        |
 | Poland        | 2180          | 9651     | ?        |
 | Spain         | 2062          | ?        | ?        |
-| United  ingdom| 27700         | 5701     | 7405     |
+| United Kingdom| 27700         | 5701     | 7405     |
