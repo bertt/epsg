@@ -9,6 +9,7 @@ Frequently used EPSG codes for countries
 | Denmark       | 25832         | 5799     | ?        |
 | France        | 2154          | 5720     | 5698     |
 | Israel        | 2039          | 5733     | ?        |
+| Poland        | 2180          | 5733     | 9651     |
 | Netherlands   | 28992         | 5709     | 7415     |
 | Norway        | 25833         | 5941     | ?        |
 | Spain         | 2062          | ?        | ?        |
