@@ -12,5 +12,5 @@ Frequently used EPSG codes for countries
 | Netherlands   | 28992         | 5709     | 7415     |
 | Norway        | 25833         | 5941     | ?        |
 | Poland        | 2180          | 9651     | ?        |
-| Spain         | 2062          | ?        | ?        |
+| Spain         | 2062          | 5782     | ?        |
 | United Kingdom| 27700         | 5701     | 7405     |
