@@ -22,4 +22,5 @@ tool: https://crs-explorer.proj.org/
 | United Kingdom | 27700         | 5701     | 7405     |
 | World ellipsoid| 4979          | 4979     | ?        |
 | World egm96    | 4979          | 5773     | ?        |
+| Delaware and Maryland | 26985  | 5703     | ?        |
 
