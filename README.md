@@ -24,3 +24,7 @@ tool: https://crs-explorer.proj.org/
 | World egm96    | 4979          | 5773     | ?        |
 | Delaware and Maryland | 26985  | 5703     | ?        |
 
+
+Ellipoid vertical height:
+
+- NAD83 / Maryland: EPSG:4269
