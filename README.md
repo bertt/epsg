@@ -10,6 +10,7 @@ tool: https://crs-explorer.proj.org/
 | Belgium        | 31370         | 5710     | 6190     |
 | Corsica        | 2154          | 5721     | 5699     |
 | Denmark        | 4095          | 5799     | 4099     |
+| Estonia        | ?             | 9663     | ?        |
 | France         | 2154          | 5720     | 5698     |
 | Germany        | 25832         | 5783     | 5555     |
 | Greece         | 2100          | 5716	    | ?        | 
