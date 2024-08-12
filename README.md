@@ -4,10 +4,13 @@ Frequently used EPSG codes for countries
 
 tool: https://crs-explorer.proj.org/
 
+https://cdn.proj.org/ select geoid models
+
 | Country        | Horizontal    | Vertical | Compound |
 | --------------:|:-------------:| --------:|----------:
 | Australia      | 4938          | 5711     | 9464     |
 | Belgium        | 31370         | 5710     | 6190     |
+| Canarias       | ?             | 9397     | ?        |
 | Corsica        | 2154          | 5721     | 5699     |
 | Denmark        | 4095          | 5799     | 4099     |
 | Estonia        | ?             | 9663     | ?        |
