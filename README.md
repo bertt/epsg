@@ -20,7 +20,7 @@ https://cdn.proj.org/ select geoid models
 | Greece         | 2100          | 5716	    | ?        | 
 | Israel         | 2039          | 5733     | ?        |
 | Italy          | 4258	         | 5214     | 9723     |
-| Japan          |               | 6695     |          |
+| Japan          | 6677          | 6695     | 6697     |
 | Netherlands    | 28992         | 5709     | 7415     |
 | Norway         | 25833         | 5776     | ?        |
 | Poland         | 9702          | 9650     | 9656     |
