@@ -25,6 +25,7 @@ https://cdn.proj.org/ select geoid models
 | Netherlands    | 28992         | 5709     | 7415     |
 | Norway         | 25833         | 5776     | ?        |
 | Poland         | 9702          | 9650     | 9656     |
+| Portugal       |               | 4937     |          |
 | Slovenia       |               | 8690     |          |
 | Spain          | 4258          | 5782     | 9505     |
 | United Kingdom | 27700         | 5701     | 7405     |
