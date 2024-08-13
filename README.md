@@ -1,6 +1,6 @@
 # epsg
 
-Frequently used EPSG codes for countries
+Frequently used horizontal/vertical/compound EPSG codes for countries
 
 tool: https://crs-explorer.proj.org/
 
