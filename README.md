@@ -28,6 +28,7 @@ https://cdn.proj.org/ select geoid models
 | Portugal       |               | 4937     |          |
 | Slovenia       |               | 8690     |          |
 | Spain          | 4258          | 5782     | 9505     |
+| Switzerland    | 2056          | 5728/5729| ?        |
 | United Kingdom | 27700         | 5701     | 7405     |
 | World ellipsoid| 4979          | 4979     | ?        |
 | World egm96    | 4979          | 5773     | ?        |
