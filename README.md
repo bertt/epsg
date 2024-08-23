@@ -14,6 +14,7 @@ https://cdn.proj.org/ select geoid models
 | Canarias       | ?             | 9397     | ?        |
 | Corsica        | 2154          | 5721     | 5699     |
 | Denmark        | 4095          | 5799     | 4099     |
+| Europe         | 4258          | 5773     |          |
 | Estonia        | 3301          | 9663     | ?        |
 | France         | 2154          | 5720     | 5698     |
 | France Guyane  | 2972          | 5755     | ?        |
