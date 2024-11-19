@@ -24,7 +24,7 @@ https://cdn.proj.org/ select geoid models
 | Italy          | 4258	         | 5214     | 9723     |
 | Japan          | 6677          | 6695     | 6697     |
 | Netherlands    | 28992         | 5709     | 7415     |
-| Norway         | 25833         | 5776     | ?        |
+| Norway         | 25832         | 5941     | 5972        |
 | Poland         | 9702          | 9650     | 9656     |
 | Portugal       |               | 4937     |          |
 | Slovenia       |               | 8690     |          |
