@@ -12,6 +12,7 @@ https://cdn.proj.org/ select geoid models
 | Australia      | 4938          | 5711     | 9464     |
 | Belgium        | 31370         | 5710     | 6190     |
 | Canarias       | ?             | 9397     | ?        |
+| Canada         | 3979          | ?        | ?        |
 | Corsica        | 2154          | 5721     | 5699     |
 | Denmark        | 4095          | 5799     | 4099     |
 | Europe         | 4258          | 5773     |          |
