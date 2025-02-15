@@ -47,7 +47,7 @@ World:
 | World Web mercator    | 3857          |
 | World geographic 2D | 4326 |
 | World geographic 3D | 4979 |
-| EGM84 height| EPSG:5798 |
+| EGM84 height| 5798 |
 | EGM96 height| 5773 |
 | EGM2008 height | 3855 |
 | EGM2020 height | ? |
