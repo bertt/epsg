@@ -46,8 +46,8 @@ World:
 | --------------:|:-------------:|
 | World geocentric (x,y,z) | 4978          | 
 | World Web mercator    | 3857          |
-| World geographic 2D | 4326 |
-| World geographic 3D | 4979 |
+| World geographic 2D - EGM2008 | 4326 |
+| World geographic 3D - EGM2008| 4979 |
 | EGM84 height| 5798 |
 | EGM96 height| 5773 |
 | EGM2008 height | 3855 |
