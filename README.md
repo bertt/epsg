@@ -32,9 +32,17 @@ https://cdn.proj.org/ select geoid models
 | Spain          | 4258          | 5782     | 9505     |
 | Switzerland    | 2056          | 5728     | ?        |
 | United Kingdom | 27700         | 5701     | 7405     |
-| World ellipsoid| 4979          | 4979     | ?        |
-| World egm96    | 4979          | 5773     | ?        |
 | Delaware and Maryland | 26985  | 5703     | ?        |
+
+
+World:
+
+| World geocentric (x,y,z) | 4978          | 
+| World Web mercator    | 3857          |
+| World geographic 2D | 4326 |
+| World geographic 3D | 4979 |
+| EGM96 - Mean Sea Level (vertical) | 5773 |
+| EGM2008 - Mean Sea Level (vertical) | 3855 |
 
 
 Ellipoid vertical height:
