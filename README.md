@@ -2,6 +2,10 @@
 
 Frequently used horizontal/vertical/compound EPSG codes for countries
 
+Official: https://epsg.org/home.html
+
+Less official: https://spatialreference.org/ , https://epsg.io/
+
 tool: https://crs-explorer.proj.org/
 
 https://cdn.proj.org/ select geoid models
@@ -25,7 +29,7 @@ https://cdn.proj.org/ select geoid models
 | Italy          | 4258	         | 5214     | 9723     |
 | Japan          | 6677          | 6695     | 6697     |
 | Netherlands    | 28992         | 5709     | 7415     |
-| Norway         | 25832         | 5941     | 5972        |
+| Norway         | 25832         | 5941     | 5972     |
 | Poland         | 9702          | 9650     | 9656     |
 | Portugal       |               | 4937     |          |
 | Slovenia       |               | 8690     |          |
@@ -37,14 +41,11 @@ https://cdn.proj.org/ select geoid models
 
 World:
 
+| Description        | Code    | 
+| --------------:|:-------------:|
 | World geocentric (x,y,z) | 4978          | 
 | World Web mercator    | 3857          |
 | World geographic 2D | 4326 |
 | World geographic 3D | 4979 |
 | EGM96 - Mean Sea Level (vertical) | 5773 |
 | EGM2008 - Mean Sea Level (vertical) | 3855 |
-
-
-Ellipoid vertical height:
-
-- NAD83 / Maryland: EPSG:4269
