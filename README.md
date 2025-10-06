@@ -33,6 +33,7 @@ https://cdn.proj.org/ select geoid models
 | Norway         | 25832         | 5941     | 5972     |
 | Poland         | 9702          | 9650     | 9656     |
 | Portugal       |               | 4937     |          |
+| Reunion        | 2975          |          |          |
 | Slovenia       |               | 8690     |          |
 | Spain          | 4258          | 5782     | 9505     |
 | Switzerland    | 2056          | 5728     | ?        |
