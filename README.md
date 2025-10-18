@@ -34,6 +34,7 @@ https://cdn.proj.org/ select geoid models
 | Poland         | 9702          | 9650     | 9656     |
 | Portugal       |               | 4937     |          |
 | Reunion        | 2975          |          |          |
+| Singapore      | 3414          | 6916     | 6927     |
 | Slovenia       |               | 8690     |          |
 | Spain          | 4258          | 5782     | 9505     |
 | Switzerland    | 2056          | 5728     | ?        |
