@@ -1,6 +1,6 @@
 # epsg
 
-Frequently used horizontal/vertical/compound EPSG codes for countries
+Frequently used horizontal/vertical/compound EPSG codes for (part of) countries/continents
 
 Official: https://epsg.org/home.html
 
@@ -10,17 +10,17 @@ tool: https://crs-explorer.proj.org/
 
 https://cdn.proj.org/ select geoid models
 
-| Country        | Horizontal    | Vertical | Compound |
+| Are            | Horizontal    | Vertical | Compound |
 | --------------:|:-------------:| --------:|----------:
 | Argentina      |               | 9255     |          | 
 | Australia GDA94| 4983          | 5711     | 9464     |
-| Australia GDA94| 7842          | ?     | ?     |
+| Australia GDA94| 7842          | ?        | ?        |
 | Belgium        | 31370         | 5710     | 6190     |
 | Canarias       | ?             | 9397     | ?        |
 | Canada         | 3979          | ?        | ?        |
 | Corsica        | 2154          | 5721     | 5699     |
 | Denmark        | 4095          | 5799     | 4099     |
-| Europe         | 4258          | 5773     |          |
+| Europe ETRS89  | 4936          | 6258     | 4937     |
 | Estonia        | 3301          | 9663     | ?        |
 | France         | 2154          | 5720     | 5698     |
 | France Guyane  | 2972          | 5755     | ?        |
