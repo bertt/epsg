@@ -37,7 +37,7 @@ Geoid grids from some countries: https://www.agisoft.com/downloads/geoids/
 | Japan          | 6677          | 6695     | 6697     |
 | Mexico         | ?             | 5703/6357| ?        |
 | Netherlands    | 28992         | 5709     | 7415     |
-| New Zealand    | ?             | 4440/7839| ?        |
+| New Zealand    | ?             | 4440/7839| 9528     |
 | Norway         | 25832         | 5776/5941| 5972     |
 | Puerto Rico    | ?             | 6641     | ?        |
 | Poland         | 9702          | 9650     | 9656     |
@@ -46,7 +46,7 @@ Geoid grids from some countries: https://www.agisoft.com/downloads/geoids/
 | Samoa          | ?             | 6643     |          |
 | Singapore      | 3414          | 6916     | 6927     |
 | Slovenia       | 4765          | 5779/8690| 10686    |
-| South Africa   | ?             | 9279     | ?        |
+| South Africa   | ?             | 9279     | 9543     |
 | Spain          | 4258          | 5782     | 9505     |
 | Sweden         | ?             | 5718/5613| ?        |
 | Switzerland    | 2056          | 5728/5729| ?        |
