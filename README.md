@@ -10,6 +10,8 @@ tool: https://crs-explorer.proj.org/
 
 https://cdn.proj.org/ select geoid models
 
+Geoid grids from some countries: https://www.agisoft.com/downloads/geoids/
+
 | Are            | Horizontal    | Vertical | Compound |
 | --------------:|:-------------:| --------:|----------:
 | Argentina      |               | 9255     |          | 
@@ -17,11 +19,12 @@ https://cdn.proj.org/ select geoid models
 | Australia GDA94| 7842          | ?        | ?        |
 | Belgium        | 31370         | 5710     | 6190     |
 | Canarias       | ?             | 9397     | ?        |
-| Canada         | 3979          | ?        | ?        |
+| Canada         | 3979          | 6647/5713| ?        |
 | Corsica        | 2154          | 5721     | 5699     |
 | Denmark        | 4095          | 5799     | 4099     |
 | Europe ETRS89  | 4936          | 6258     | 4937     |
 | Estonia        | 3301          | 9663     | ?        |
+| Finland        | ?             | 3900/5717| ?     |
 | France         | 2154          | 5720     | 5698     |
 | France Guyane  | 2972          | 5755     | ?        |
 | Germany        | 25832         | 5783     | 5555     |
