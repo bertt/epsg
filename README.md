@@ -40,6 +40,7 @@ Geoid grids from some countries: https://www.agisoft.com/downloads/geoids/
 | Netherlands    | 28992         | 5709     | 7415     |
 | New Zealand    | 4167/2193     | 4440/7839| 9528     |
 | Norway         | 25832         | 5776/5941| 5972     |
+| Pakistan       | 24311/24312   | ?        | ?        |
 | Puerto Rico    | 6307          | 6641     | ?        |
 | Poland         | 9702          | 9650     | 9656     |
 | Portugal       | 4258          | 4937     | ?        |
