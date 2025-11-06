@@ -18,8 +18,8 @@ Geoid grids from some countries: https://www.agisoft.com/downloads/geoids/
 | Australia GDA94| 4983          | 5711     | 9464     |
 | Australia GDA94| 7842          | ?        | ?        |
 | Belgium        | 31370         | 5710     | 6190     |
-| Canarias       | ?             | 9397     | ?        |
-| Canada         | 3979          | 6647/5713| ?        |
+| Canarias       | 4258          | 9397     | 9512     |
+| Canada         | 3979          | 6647/5713| 6649     |
 | Corsica        | 2154          | 5721     | 5699     |
 | Denmark        | 4095          | 5799     | 4099     |
 | Europe ETRS89  | 4936          | 6258     | 4937     |
@@ -28,7 +28,7 @@ Geoid grids from some countries: https://www.agisoft.com/downloads/geoids/
 | France         | 2154          | 5720     | 5698     |
 | France Guyane  | 2972          | 5755     | ?        |
 | Germany        | 25832         | 5783/7837| 5555     |
-| Gran Canaria   | ?             | 9397	    | ?        | 
+| Gran Canaria   | 4258          | 9397	    | 9512     | 
 | Greece         | 2100          | 5716	    | ?        | 
 | Guam           | ?             | 6644	    | ?        | 
 | Hawai          | ?             | 5703	    | ?        | 
