@@ -14,7 +14,7 @@ Geoid grids from some countries: https://www.agisoft.com/downloads/geoids/
 
 | Area           | Horizontal    | Vertical | Compound |
 | --------------:|:-------------:| --------:|----------:
-| Argentina      |               | 9255     |          | 
+| Argentina      | 5342          | 9255     | 9521     | 
 | Australia GDA94| 4983          | 5711     | 9464     |
 | Australia GDA94| 7842          | ?        | ?        |
 | Belgium        | 31370         | 5710     | 6190     |
