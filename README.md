@@ -12,7 +12,7 @@ https://cdn.proj.org/ select geoid models
 
 Geoid grids from some countries: https://www.agisoft.com/downloads/geoids/
 
-| Are            | Horizontal    | Vertical | Compound |
+| Area           | Horizontal    | Vertical | Compound |
 | --------------:|:-------------:| --------:|----------:
 | Argentina      |               | 9255     |          | 
 | Australia GDA94| 4983          | 5711     | 9464     |
@@ -24,23 +24,32 @@ Geoid grids from some countries: https://www.agisoft.com/downloads/geoids/
 | Denmark        | 4095          | 5799     | 4099     |
 | Europe ETRS89  | 4936          | 6258     | 4937     |
 | Estonia        | 3301          | 9663     | ?        |
-| Finland        | ?             | 3900/5717| ?     |
+| Finland        | ?             | 3900/5717| ?        |
 | France         | 2154          | 5720     | 5698     |
 | France Guyane  | 2972          | 5755     | ?        |
-| Germany        | 25832         | 5783     | 5555     |
+| Germany        | 25832         | 5783/7837| 5555     |
+| Gran Canaria   | ?             | 9397	    | ?        | 
 | Greece         | 2100          | 5716	    | ?        | 
+| Guam           | ?             | 6644	    | ?        | 
+| Hawai          | ?             | 5703	    | ?        | 
 | Israel         | 2039          | 5733     | ?        |
 | Italy          | 4258	         | 5214     | 9723     |
 | Japan          | 6677          | 6695     | 6697     |
+| Mexico         | ?             | 5703/6357| ?        |
 | Netherlands    | 28992         | 5709     | 7415     |
-| Norway         | 25832         | 5941     | 5972     |
+| New Zealand    | ?             | 4440/7839| ?        |
+| Norway         | 25832         | 5776/5941| 5972     |
+| Puerto Rico    | ?             | 6641     | ?        |
 | Poland         | 9702          | 9650     | 9656     |
 | Portugal       |               | 4937     |          |
 | Reunion        | 2975          |          |          |
+| Samoa          | ?             | 6643     |          |
 | Singapore      | 3414          | 6916     | 6927     |
-| Slovenia       | 4765          | 5779     | 10686    |
+| Slovenia       | 4765          | 5779/8690| 10686    |
+| South Africa   | ?             | 9279     | ?        |
 | Spain          | 4258          | 5782     | 9505     |
-| Switzerland    | 2056          | 5728     | ?        |
+| Sweden         | ?             | 5718/5613| ?        |
+| Switzerland    | 2056          | 5728/5729| ?        |
 | United Kingdom | 27700         | 5701     | 7405     |
 | Delaware and Maryland | 26985  | 5703     | ?        |
 
