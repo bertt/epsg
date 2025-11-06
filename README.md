@@ -49,6 +49,7 @@ Geoid grids from some countries: https://www.agisoft.com/downloads/geoids/
 | Singapore      | 3414          | 6916     | 6927     |
 | Slovenia       | 4765          | 5779/8690| 10686    |
 | South Africa   | 2048/2054     | 9279     | 9543     |
+| South Korea    | 5179          | ?        | ?        |
 | Spain          | 4258          | 5782     | 9505     |
 | Sweden         | 3006          | 5718/5613| ?        |
 | Switzerland    | 2056          | 5728/5729| ?        |
