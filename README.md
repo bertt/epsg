@@ -17,6 +17,7 @@ Geoid grids from some countries: https://www.agisoft.com/downloads/geoids/
 | Argentina      | 5342          | 9255     | 9521     | 
 | Australia GDA94| 4983          | 5711     | 9464     |
 | Australia GDA94| 7842          | 9458     | ?        |
+| Austria        | 31256         | 5778     | ?        | 
 | Belgium        | 31370         | 5710     | 6190     |
 | Canarias       | 4258          | 9397     | 9512     |
 | Canada         | 3979          | 6647/5713| 6649     |
