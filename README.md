@@ -37,7 +37,7 @@ Geoid grids from some countries: https://www.agisoft.com/downloads/geoids/
 | Israel         | 2039          | 5733     | ?        |
 | Italy          | 4258	         | 5214     | 9723     |
 | Japan          | 6677          | 6695     | 6697     |
-| Luxemburg      | 2169          | ?        | ?        |
+| Luxemburg      | 2169          | 5774     | 9897     |
 | Mexico         | 6365          | 5703/6357| ?        |
 | Netherlands    | 28992         | 5709     | 7415     |
 | New Zealand    | 4167/2193     | 4440/7839| 9528     |
