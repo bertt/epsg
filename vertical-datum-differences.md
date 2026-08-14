@@ -34,6 +34,58 @@ grids/parameters published by the relevant national mapping agencies or EuroGeog
 | Spain – France                                | Alicante gauge vs. NGF-IGN69 (Marseille) | ~20–30 cm         | |
 | Portugal – Spain                               | Cascais gauge vs. Alicante gauge   | ~10–20 cm             | |
 
+## Worked example: computing the CH–DE offset yourself with GDAL/PROJ
+
+You can compute the local height-datum offset yourself with the `cs2cs` tool from PROJ
+(shipped with GDAL) by transforming the same point from the compound CRS of one country to
+the compound CRS of the other, keeping the same input height, and comparing the output height.
+
+Example, near the Laufenburg bridge on the Rhine (WGS84/ETRS89 ~47.567°N, 8.070°E), from the
+pan-European compound `EPSG:7423` (ETRS89 + EVRF2007 height) to the Swiss compound
+`EPSG:4258+EPSG:5729` (ETRS89 + LHN95 height):
+
+```bash
+echo "47.567 8.070 400" | cs2cs -d 4 EPSG:7423 EPSG:4258+EPSG:5729
+# 47.5670  8.0700 400.1594
+```
+
+An input height of 400.0000 m (EVRF2007) becomes 400.1594 m (Swiss LHN95) at this location —
+i.e. a local offset of about **+16 cm** between the pan-European EVRF2007 reference and the
+Swiss LHN95 reference at this specific point. Note this is smaller than, and not directly
+comparable to, the historical 27 cm Marseille/Amsterdam difference quoted for the Laufenburg
+bridge story: LHN95 is a modern, GNSS/geoid-based Swiss realization (not the 1876 Marseille
+gauge value), and the offset is a smoothly-varying surface (via `+proj=vertoffset` and geoid
+grids) rather than a single constant, so the result depends on exactly which coordinate you
+pick and which grids/realizations are involved.
+
+Steps to reproduce or adapt this for other borders:
+1. Look up the compound EPSG code for each country/area (horizontal + vertical CRS), e.g. from
+   `README.md`.
+2. Pick a coordinate near the border of interest.
+3. Run `cs2cs -d 4 <source compound CRS> <target compound CRS>` with `lat lon height` as input
+   (check axis order with `projinfo -s <src> -t <dst> -o PROJ` if unsure).
+4. The difference between input and output height is the local datum offset at that point.
+5. Repeat at a few points along the border, since the offset is not constant — use
+   `projinfo -s <src> -t <dst>` to see which operation/grids PROJ selected, and make sure the
+   required grids are installed locally or reachable via `PROJ_NETWORK=ON`
+   (grids are served from https://cdn.proj.org/).
+
+
+
+- BKG (German Federal Agency for Cartography and Geodesy), D-A-CH cross-border geoid/height
+  project: https://gibs.bkg.bund.de/geoid/en/dach-projectsite.html
+- CRS-EU, overview of national vertical reference systems in Europe:
+  https://www.crs-geo.eu/crs-national.htm
+- EVRS / EVRF2007 documentation, EuroGeographics / IAG Subcommission for Europe (EUREF):
+  https://evrs.bkg.bund.de/
+- Laufenburg bridge case: https://en.wikipedia.org/wiki/Laufenburg,_Germany#Bridge_construction
+
+**Disclaimer**: the offsets above are approximate, rounded, order-of-magnitude figures meant
+to illustrate why vertical datums matter. They should not be used directly for engineering or
+surveying transformations — always use the official national/EUREF transformation grids for
+real work.
+
+
 ## Sources / further reading
 
 - BKG (German Federal Agency for Cartography and Geodesy), D-A-CH cross-border geoid/height
