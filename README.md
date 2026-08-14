@@ -88,6 +88,26 @@ Notes:
 | Uruguay               | 5381 (SIRGAS-ROU98, geo 2D)                      | — (no vertical CRS registered)           | — |
 | Venezuela             | 4189 (REGVEN, geo 2D)                            | — (no vertical CRS registered)           | — |
 
+## Caribbean (Dutch Antilles)
+
+| Area                  | Horizontal (name)                                | Vertical (name)                          | Compound (name) |
+| ---------------------:|:---------------------------------------------------|:--------------------------------------------|:-----------------|
+| Bonaire               | 10762 (Bonaire 2004, geo 2D)                     | 10763 (Bonaire height)                   | 10765 (Bonaire 2004 + Bonaire height) |
+| Sint Eustatius        | 10736 (Sint Eustatius, geo 2D)                   | 10740 (Sint Eustatius height)             | 10741 (Sint Eustatius + Sint Eustatius height) |
+| Saba                  | 10636 (Saba, geo 2D)                             | 10642 (Saba height)                      | 10643 (Saba + Saba height) |
+| Curaçao               | ESRI:37000 (Curacao_1951, geo 2D) / ESRI:103983 (UTM zone 19N, projected) — no EPSG registration | — | — |
+| Aruba                 | no dedicated CRS registered; WGS84 (4326) / UTM zone 19N-20N is used in practice | — | — |
+| Sint Maarten          | no dedicated CRS registered; WGS84 (4326) / UTM zone 20N is used in practice | — | — |
+
+Notes:
+- Bonaire, Sint Eustatius and Saba ("Caribbean Netherlands" / BES islands) each have their own
+  modern EPSG-registered geodetic and vertical reference systems (also available as older
+  "BES2020" realizations and local DPnet projected grids, not listed here for brevity).
+- Curaçao only has a coordinate system registered under the **ESRI** authority (`Curacao_1951`),
+  not under EPSG.
+- Aruba and Sint Maarten have no dedicated coordinate reference system registered under EPSG or
+  ESRI in this dataset; WGS84-based UTM zones are commonly used in practice instead.
+
 ## Africa
 
 | Area                  | Horizontal (name)                                | Vertical (name)                          | Compound (name) |
