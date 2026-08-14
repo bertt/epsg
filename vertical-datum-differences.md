@@ -70,21 +70,10 @@ Steps to reproduce or adapt this for other borders:
    required grids are installed locally or reachable via `PROJ_NETWORK=ON`
    (grids are served from https://cdn.proj.org/).
 
-
-
-- BKG (German Federal Agency for Cartography and Geodesy), D-A-CH cross-border geoid/height
-  project: https://gibs.bkg.bund.de/geoid/en/dach-projectsite.html
-- CRS-EU, overview of national vertical reference systems in Europe:
-  https://www.crs-geo.eu/crs-national.htm
-- EVRS / EVRF2007 documentation, EuroGeographics / IAG Subcommission for Europe (EUREF):
-  https://evrs.bkg.bund.de/
-- Laufenburg bridge case: https://en.wikipedia.org/wiki/Laufenburg,_Germany#Bridge_construction
-
 **Disclaimer**: the offsets above are approximate, rounded, order-of-magnitude figures meant
 to illustrate why vertical datums matter. They should not be used directly for engineering or
 surveying transformations — always use the official national/EUREF transformation grids for
 real work.
-
 
 ## Sources / further reading
 
