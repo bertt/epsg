@@ -2,7 +2,9 @@
 
 Frequently used horizontal / vertical / compound EPSG codes per country or region.
 
-Map version see https://bertt.github.io/epsg/map.html
+## Map version 
+
+see https://bertt.github.io/epsg/map.html
 
 **Source**: this table is generated from the official EPSG Geodetic Parameter Dataset
 (https://epsg.org/home.html), IOGP EPSG dataset **v12.049**. Since the epsg.org website search
