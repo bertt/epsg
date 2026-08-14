@@ -52,6 +52,9 @@ that a well-defined EPSG vertical/compound CRS is meant to prevent.
 
 See: https://en.wikipedia.org/wiki/Laufenburg,_Germany#Bridge_construction
 
+For approximate height offsets between other neighboring countries' vertical datums, see
+[`vertical-datum-differences.md`](vertical-datum-differences.md).
+
 ## Europe
 
 | Area                  | Horizontal (name)                                | Vertical (name)                          | Compound (name) |
