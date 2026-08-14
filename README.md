@@ -32,6 +32,24 @@ Notes:
   1960 for Kenya/Tanzania/Uganda, PSAD56 for several Andean countries). This is noted where
   relevant.
 
+## Why this matters: the Laufenburg bridge
+
+A classic, often-cited example of what can go wrong when two vertical datums (height
+references) are mixed up is the **Rhine bridge at Laufenburg**, on the border between
+Switzerland and Germany. When construction started in 1876, the Swiss and German engineers
+each measured height relative to a different reference: Switzerland used mean sea level of
+the Mediterranean (Marseille), while Germany used mean sea level of the North Sea
+(Amsterdam/Hamburg). The known difference between these two references, about 27 cm, was
+already taken into account — but a sign error in applying that correction meant it was
+added instead of subtracted, doubling the discrepancy: the two halves of the bridge ended up
+about 54 cm off vertically where they were meant to meet. The mismatch was caught before
+completion and resolved by adjusting the German approach ramp to match the Swiss side, but it
+remains a textbook illustration of why a project's vertical datum — and any correction applied
+to it — must be stated and applied correctly and unambiguously, exactly the kind of ambiguity
+that a well-defined EPSG vertical/compound CRS is meant to prevent.
+
+See: https://en.wikipedia.org/wiki/Laufenburg,_Germany#Bridge_construction
+
 ## Europe
 
 | Area                  | Horizontal (name)                                | Vertical (name)                          | Compound (name) |
