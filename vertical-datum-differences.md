@@ -28,13 +28,30 @@ reliable computed value could be produced for them.
 | Germany – Switzerland       | EPSG:5555 → EPSG:2056+EPSG:5729 | **+32 cm** (CH higher)         | Near Laufenburg (47.567°N, 8.070°E); same order of magnitude as the historical 27 cm Laufenburg bridge figure. |
 | Germany – France             | EPSG:5555 → EPSG:5698           | **+50 cm** (FR higher)         | Near 48.58°N, 7.77°E (Rhine, Strasbourg area). |
 | Germany – Netherlands          | EPSG:5555 → EPSG:7415         | **+2 cm** (NL higher)          | Near 51.80°N, 6.10°E. |
-| Germany – Belgium                | EPSG:5555 → EPSG:6190       | **+2.33 m** (BE higher)        | Near 50.65°N, 6.05°E (Eupen area). |
-| Belgium – Netherlands               | EPSG:6190 → EPSG:7415     | **−2.31 m** (NL lower)         | Near Baarle-Nassau (51.44°N, 4.93°E) — see worked example below. |
-| Belgium – France                     | EPSG:6190 → EPSG:5698   | **−1.82 m** (FR lower)         | Near 50.30°N, 3.85°E; consistent with the DE–BE and DE–FR rows above. |
+| Germany – Belgium                | EPSG:5555 → EPSG:6190       | **+2.33 m** (BE higher)        | Near 50.65°N, 6.05°E (Eupen area); large offset due to TAW's mean-low-water zero level, see note below. |
+| Belgium – Netherlands               | EPSG:6190 → EPSG:7415     | **−2.31 m** (NL lower)         | Near Baarle-Nassau (51.44°N, 4.93°E) — see worked example below; large offset due to TAW's mean-low-water zero level, see note below. |
+| Belgium – France                     | EPSG:6190 → EPSG:5698   | **−1.82 m** (FR lower)         | Near 50.30°N, 3.85°E; large offset due to TAW's mean-low-water zero level, see note below. |
 | France – Switzerland                    | EPSG:5698 → EPSG:2056+EPSG:5729 | **−34 cm** (CH lower)  | Near Geneva (46.20°N, 6.15°E). |
 | France – Spain                            | EPSG:5698 → EPSG:9505 | **−4 cm** (ES lower)           | Near 42.43°N, 2.87°E (Pyrenees, eastern end). |
 | Spain – Portugal                            | EPSG:9505 → EPSG:10545 | **−4 cm** (PT lower)        | Near 42.05°N, −8.64°E. |
 | France – Italy                                | EPSG:5698 → EPSG:9723 | **−15 cm** (IT lower)      | Near 44.13°N, 7.55°E (Alps, Col de Tende area). |
+
+## Why the Belgian offsets are so much larger than other borders
+
+The Belgian offsets (DE–BE +2.33 m, BE–NL −2.31 m, BE–FR −1.82 m) stand out as much larger
+than every other border in the table above (which are all a few centimeters to half a
+meter). This is not a fault or inaccuracy, but a genuinely different definition of the "zero
+level" for height.
+
+Most countries in this table (Germany, France, Netherlands, Switzerland, Spain, Portugal)
+define their vertical datum as **mean sea level** — the average of all tide levels over a
+long observation period. Belgium's TAW ("Tweede Algemene Waterpassing") instead defines its
+zero level as the **mean low water** at Ostend, measured 1834–1853 — i.e. the average of only
+the low-tide levels, not all tide levels. Since low water is naturally about 2.3 m below mean
+sea level, a given physical point gets a TAW height reading that is about 2.3 m higher than
+its mean-sea-level-based height in a neighboring country. This single difference in reference
+concept (low water vs. mean sea level) explains essentially all of the ~2 m Belgian offsets in
+the table, and is why Belgium is the clear outlier compared to its neighbors.
 
 ## Worked example: computing the CH–DE offset yourself with GDAL/PROJ
 
