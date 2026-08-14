@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>EPSG codes per country / region</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+<style>
+  html, body, #map { height: 100%; margin: 0; padding: 0; font-family: system-ui, Arial, sans-serif; }
+  #title {
+    position: absolute; top: 10px; left: 10px; z-index: 1;
+    background: rgba(255,255,255,0.9); padding: 8px 14px; border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.3); font-size: 14px; max-width: 340px;
+  }
+  #title h1 { font-size: 15px; margin: 0 0 4px 0; }
+  #title p { margin: 0; font-size: 12px; color: #444; }
+  .maplibregl-popup-content { font-size: 13px; line-height: 1.5; max-width: 280px; }
+  .maplibregl-popup-content h3 { margin: 0 0 6px 0; font-size: 14px; }
+  .maplibregl-popup-content table { border-collapse: collapse; width: 100%; }
+  .maplibregl-popup-content td { padding: 2px 4px; vertical-align: top; }
+  .maplibregl-popup-content td.label { font-weight: 600; white-space: nowrap; color: #555; }
+  .region-block { margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #eee; }
+  .region-block:last-child { border-bottom: none; margin-bottom: 0; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<div id="title">
+  <h1>EPSG codes per country / region</h1>
+  <p>Click on a country or region to see its horizontal, vertical and compound EPSG codes
+  (source: EPSG dataset v12.049, see <code>README.md</code>).</p>
+</div>
+
+<script>
+// Data extracted from README.md (EPSG dataset v12.049)
+const REGIONS = [
+  {
+    "name": "Austria",
+    "horizontal": "31287 (MGI / Austria Lambert, projected)",
+    "vertical": "5778 (GHA height)",
+    "compound": "9501 (MGI + EVRF2000 Austria height)",
+    "match": [
+      "Austria"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Belgium",
+    "horizontal": "31370 (BD72 / Belgian Lambert 72, projected)",
+    "vertical": "5710 (Ostend height)",
+    "compound": "6190 (BD72 / Belgian Lambert 72 + Ostend height)",
+    "match": [
+      "Belgium"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Bulgaria",
+    "horizontal": "7801 (ETRS89-BGR [BGS2005] / CCS2005, projected)",
+    "vertical": "9669 (BGS2005 height)",
+    "compound": "—",
+    "match": [
+      "Bulgaria"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Croatia",
+    "horizontal": "3765 (ETRS89-HRV [HTRS96] / Croatia TM, projected)",
+    "vertical": "5610 (HVRS71 height)",
+    "compound": "—",
+    "match": [
+      "Croatia"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Czechia",
+    "horizontal": "5515 (S-JTSK/05 / Modified Krovak, projected)",
+    "vertical": "— (Baltic 1957 height not separately registered)",
+    "compound": "11311 (ETRS89-CZE [2007] + Baltic 1957 height)",
+    "match": [
+      "Czechia"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Denmark",
+    "horizontal": "4095 (ETRS89 / DKTM3, projected)",
+    "vertical": "5799 (DVR90 height)",
+    "compound": "4099 (ETRS89 / DKTM3 + DVR90 height)",
+    "match": [
+      "Denmark"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Estonia",
+    "horizontal": "3301 (Estonian CS of 1997, projected)",
+    "vertical": "9663 (EH2000 height)",
+    "compound": "—",
+    "match": [
+      "Estonia"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Finland",
+    "horizontal": "3067 (ETRS89-FIN / TM35FIN(E,N), projected)",
+    "vertical": "3900 (N2000 height)",
+    "compound": "3903 (ETRS89-FIN / TM35FIN(N,E) + N2000 height)",
+    "match": [
+      "Finland"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "France (mainland)",
+    "horizontal": "2154 (ETRS89-FRA / Lambert-93, projected)",
+    "vertical": "5720 (NGF-IGN69 height)",
+    "compound": "5698 (ETRS89-FRA / Lambert-93 + NGF-IGN69 height)",
+    "match": [
+      "France"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "France - Corsica",
+    "horizontal": "2154 (ETRS89-FRA / Lambert-93, projected)",
+    "vertical": "5721 (NGF-IGN78 height)",
+    "compound": "5699 (ETRS89-FRA / Lambert-93 + NGF-IGN78 height)",
+    "match": [],
+    "bbox": [
+      8.4,
+      41.3,
+      9.6,
+      43.1
+    ]
+  },
+  {
+    "name": "Germany",
+    "horizontal": "25832 (ETRS89 / UTM zone 32N, projected)",
+    "vertical": "5783 (DHHN92 height)",
+    "compound": "5555 (ETRS89 / UTM zone 32N + DHHN92 height)",
+    "match": [
+      "Germany"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Greece",
+    "horizontal": "2100 (GGRS87 / Greek Grid, projected)",
+    "vertical": "5716 (Piraeus height)",
+    "compound": "—",
+    "match": [
+      "Greece"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Hungary",
+    "horizontal": "23700 (HD72 / EOV, projected)",
+    "vertical": "5787 (EOMA 1980 height)",
+    "compound": "10660 (HD72 / EOV + EOMA 1980 height)",
+    "match": [
+      "Hungary"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Iceland",
+    "horizontal": "3057 (ISN93 / Lambert 1993, projected)",
+    "vertical": "8089 (ISH2004 height)",
+    "compound": "9951 (ISN93 / Lambert 1993 + ISH2004 height)",
+    "match": [
+      "Iceland"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Ireland",
+    "horizontal": "29902 (TM65 / Irish Grid, projected)",
+    "vertical": "— (no vertical CRS registered)",
+    "compound": "—",
+    "match": [
+      "Ireland"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Italy",
+    "horizontal": "6706 (ETRS89-ITA [RDN2008], geo 2D)",
+    "vertical": "5214 (Genoa 1942 height)",
+    "compound": "9723 (ETRS89-ITA [RDN2008] + Genoa 1942 height)",
+    "match": [
+      "Italy"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Luxembourg",
+    "horizontal": "2169 (LUREF / Luxembourg TM, projected)",
+    "vertical": "5774 (NG95 height)",
+    "compound": "9897 (LUREF / Luxembourg TM + NG95 height)",
+    "match": [
+      "Luxembourg"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Netherlands",
+    "horizontal": "28992 (Amersfoort / RD New, projected)",
+    "vertical": "5709 (NAP height)",
+    "compound": "7415 (Amersfoort / RD New + NAP height)",
+    "match": [
+      "Netherlands"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Norway",
+    "horizontal": "25832 (ETRS89-NOR, projected) / 10875 (geo 2D)",
+    "vertical": "5941 (NN2000 height)",
+    "compound": "5942 (ETRS89-NOR [EUREF89] + NN2000 height)",
+    "match": [
+      "Norway"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Poland",
+    "horizontal": "2180 (ETRS89 / PL-1992, projected)",
+    "vertical": "9650 (Baltic 1986 height)",
+    "compound": "9656 (ETRS89-POL [PL-ETRF2000] + Baltic 1986 height)",
+    "match": [
+      "Poland"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Portugal (mainland)",
+    "horizontal": "3763 (ETRS89-PRT [1995] / Portugal TM06)",
+    "vertical": "5780 (Cascais height)",
+    "compound": "10545 (ETRS89-PRT [1995] + Cascais height)",
+    "match": [
+      "Portugal"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Romania",
+    "horizontal": "3844 (Pulkovo 1942(58) / Stereo70, projected)",
+    "vertical": "5781 (Constanta height)",
+    "compound": "—",
+    "match": [
+      "Romania"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Russia",
+    "horizontal": "7683 (GSK-2011, geo 2D)",
+    "vertical": "— (no vertical CRS registered)",
+    "compound": "—",
+    "match": [
+      "Russia"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Slovakia",
+    "horizontal": "8352 (S-JTSK [JTSK03] / Krovak, projected)",
+    "vertical": "— (Baltic 1957 height not separately registered)",
+    "compound": "11312 (ETRS89-SVK [SKTRF09] + Baltic 1957 height)",
+    "match": [
+      "Slovakia"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Slovenia",
+    "horizontal": "4765 (ETRS89-SVN [D96], geo 2D)",
+    "vertical": "8690 (SVS2010 height)",
+    "compound": "10245 (ETRS89-SVN [D96] + SVS2010 height)",
+    "match": [
+      "Slovenia"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Spain (mainland)",
+    "horizontal": "11134 (ETRS89-ESP [REGENTE], geo 2D)",
+    "vertical": "5782 (Alicante height)",
+    "compound": "9505 (ETRS89-ESP [REGENTE] + Alicante height)",
+    "match": [
+      "Spain"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Spain - Canary Islands",
+    "horizontal": "4081 (REGCAN95, geo 2D)",
+    "vertical": "9397 (Gran Canaria height)",
+    "compound": "9512 (REGCAN95 + Gran Canaria height)",
+    "match": [],
+    "bbox": [
+      -18.5,
+      27.4,
+      -13.3,
+      29.5
+    ]
+  },
+  {
+    "name": "Sweden",
+    "horizontal": "3006 (ETRS89-SWE [SWEREF 99 TM], projected)",
+    "vertical": "5613 (RH2000 height)",
+    "compound": "5628 (ETRS89-SWE [SWEREF 99] + RH2000 height)",
+    "match": [
+      "Sweden"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Switzerland",
+    "horizontal": "2056 (CH1903+ / LV95, projected)",
+    "vertical": "5729 (LHN95 height)",
+    "compound": "—",
+    "match": [
+      "Switzerland"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Turkey",
+    "horizontal": "5636 (TUREF / LAEA Europe, projected)",
+    "vertical": "5775 (Antalya height)",
+    "compound": "—",
+    "match": [
+      "Turkey"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Ukraine",
+    "horizontal": "5561 (UCS-2000, geo 2D)",
+    "vertical": "— (no vertical CRS registered)",
+    "compound": "—",
+    "match": [
+      "Ukraine"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "United Kingdom",
+    "horizontal": "27700 (OSGB36 / British National Grid, projected)",
+    "vertical": "5701 (ODN height)",
+    "compound": "7405 (OSGB36 / British National Grid + ODN height)",
+    "match": [
+      "United Kingdom"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Argentina",
+    "horizontal": "5342 (POSGAR 2007, geo 3D)",
+    "vertical": "9255 (SRVN16 height)",
+    "compound": "9521 (POSGAR 2007 + SRVN16 height)",
+    "match": [
+      "Argentina"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Bolivia",
+    "horizontal": "5354 (MARGEN, geo 2D)",
+    "vertical": "— (no vertical CRS registered)",
+    "compound": "—",
+    "match": [
+      "Bolivia"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Brazil",
+    "horizontal": "4674 (SIRGAS 2000, geo 2D)",
+    "vertical": "— (no vertical CRS registered)",
+    "compound": "—",
+    "match": [
+      "Brazil"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Canada",
+    "horizontal": "3979 (NAD83(CSRS) / Canada Atlas Lambert)",
+    "vertical": "6647 (CGVD2013(CGG2013) height)",
+    "compound": "6649 (NAD83(CSRS) + CGVD2013(CGG2013) height)",
+    "match": [
+      "Canada"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Chile",
+    "horizontal": "20041 (SIRGAS-Chile 2021, geo 2D)",
+    "vertical": "— (no vertical CRS registered)",
+    "compound": "—",
+    "match": [
+      "Chile"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Colombia",
+    "horizontal": "20046 (MAGNA-SIRGAS 2018, geo 2D)",
+    "vertical": "— (no vertical CRS registered)",
+    "compound": "9377 (MAGNA-SIRGAS 2018 / Origen-Nacional, projected)",
+    "match": [
+      "Colombia"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Ecuador",
+    "horizontal": "4248 (PSAD56, geo 2D, shared Andean datum) / 24817 & 24877 (PSAD56 / UTM zone 17N/17S)",
+    "vertical": "— (no vertical CRS registered)",
+    "compound": "—",
+    "match": [
+      "Ecuador"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "French Guiana",
+    "horizontal": "2972 (RGFG95 / UTM zone 22N, projected)",
+    "vertical": "5755 (NGG1977 height)",
+    "compound": "9530 (RGFG95 + NGG1977 height)",
+    "match": [],
+    "bbox": [
+      -54.6,
+      2,
+      -51.6,
+      6
+    ]
+  },
+  {
+    "name": "Mexico",
+    "horizontal": "6365 (Mexico ITRF2008, geo 2D)",
+    "vertical": "— (no vertical CRS registered)",
+    "compound": "—",
+    "match": [
+      "Mexico"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Peru",
+    "horizontal": "5373 (Peru96, geo 2D)",
+    "vertical": "— (no vertical CRS registered)",
+    "compound": "—",
+    "match": [
+      "Peru"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Puerto Rico",
+    "horizontal": "6318 (NAD83(2011), geo 2D)",
+    "vertical": "6641 (PRVD02 height)",
+    "compound": "9522 (NAD83(2011) + PRVD02 height)",
+    "match": [
+      "Puerto Rico"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "United States (CONUS)",
+    "horizontal": "4269 (NAD83, geo 2D) / 5070 (NAD83 / Conus Albers, projected)",
+    "vertical": "5703 (NAVD88 height)",
+    "compound": "5498 (NAD83 + NAVD88 height)",
+    "match": [
+      "United States of America"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "United States - Hawaii",
+    "horizontal": "6628–6632 (NAD83(PA11) / Hawaii zone 1–5)",
+    "vertical": "5703 (NAVD88 height, generic US)",
+    "compound": "—",
+    "match": [],
+    "bbox": [
+      -160.5,
+      18.5,
+      -154.5,
+      22.5
+    ]
+  },
+  {
+    "name": "Uruguay",
+    "horizontal": "5381 (SIRGAS-ROU98, geo 2D)",
+    "vertical": "— (no vertical CRS registered)",
+    "compound": "—",
+    "match": [
+      "Uruguay"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Venezuela",
+    "horizontal": "4189 (REGVEN, geo 2D)",
+    "vertical": "— (no vertical CRS registered)",
+    "compound": "—",
+    "match": [
+      "Venezuela"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Bonaire",
+    "horizontal": "10762 (Bonaire 2004, geo 2D)",
+    "vertical": "10763 (Bonaire height)",
+    "compound": "10765 (Bonaire 2004 + Bonaire height)",
+    "match": [],
+    "bbox": [
+      -68.5,
+      12,
+      -68.1,
+      12.4
+    ]
+  },
+  {
+    "name": "Sint Eustatius",
+    "horizontal": "10736 (Sint Eustatius, geo 2D)",
+    "vertical": "10740 (Sint Eustatius height)",
+    "compound": "10741 (Sint Eustatius + Sint Eustatius height)",
+    "match": [],
+    "bbox": [
+      -63,
+      17.4,
+      -62.9,
+      17.6
+    ]
+  },
+  {
+    "name": "Saba",
+    "horizontal": "10636 (Saba, geo 2D)",
+    "vertical": "10642 (Saba height)",
+    "compound": "10643 (Saba + Saba height)",
+    "match": [],
+    "bbox": [
+      -63.35,
+      17.58,
+      -63.15,
+      17.68
+    ]
+  },
+  {
+    "name": "Curaçao",
+    "horizontal": "ESRI:37000 (Curacao_1951, geo 2D) / ESRI:103983 (UTM zone 19N, projected) — no EPSG registration",
+    "vertical": "—",
+    "compound": "—",
+    "match": [
+      "Curaçao"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Aruba",
+    "horizontal": "no dedicated CRS registered; WGS84 (4326) / UTM zone 19N-20N is used in practice",
+    "vertical": "—",
+    "compound": "—",
+    "match": [
+      "Aruba"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Sint Maarten",
+    "horizontal": "no dedicated CRS registered; WGS84 (4326) / UTM zone 20N is used in practice",
+    "vertical": "—",
+    "compound": "—",
+    "match": [
+      "Sint Maarten"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Egypt",
+    "horizontal": "4199 (Egypt 1930, geo 2D)",
+    "vertical": "— (no vertical CRS registered)",
+    "compound": "—",
+    "match": [
+      "Egypt"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Kenya",
+    "horizontal": "4210 (Arc 1960, geo 2D, shared with Burundi/Rwanda/Tanzania/Uganda) / 21036 & 21037 (Arc 1960 / UTM zone 36S/37S)",
+    "vertical": "—",
+    "compound": "—",
+    "match": [
+      "Kenya"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Morocco",
+    "horizontal": "4261 (Merchich, geo 2D, shared with Western Sahara) / 26191 & 26192 (Merchich / Nord Maroc, Sud Maroc)",
+    "vertical": "—",
+    "compound": "—",
+    "match": [
+      "Morocco"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Nigeria",
+    "horizontal": "4263 (Minna, geo 2D)",
+    "vertical": "5796 (Lagos 1955 height)",
+    "compound": "—",
+    "match": [
+      "Nigeria"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Reunion",
+    "horizontal": "2975 (RGR92 / UTM zone 40S, projected)",
+    "vertical": "5758 (Reunion 1989 height)",
+    "compound": "—",
+    "match": [],
+    "bbox": [
+      55.1,
+      -21.4,
+      55.9,
+      -20.8
+    ]
+  },
+  {
+    "name": "South Africa",
+    "horizontal": "2047–2055 (Hartebeesthoek94 / Lo17–Lo33)",
+    "vertical": "9279 (SA LLD height)",
+    "compound": "9543 (ITRF2005 + SA LLD height)",
+    "match": [
+      "South Africa"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "China",
+    "horizontal": "4490 (China Geodetic Coordinate System 2000, geo 2D)",
+    "vertical": "5737 (Yellow Sea 1985 height)",
+    "compound": "—",
+    "match": [
+      "China"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "India",
+    "horizontal": "4146 (Kalianpur 1975, geo 2D) / 24342–24347 (Kalianpur 1975 / UTM zone 42N–47N)",
+    "vertical": "—",
+    "compound": "—",
+    "match": [
+      "India"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Indonesia",
+    "horizontal": "9470 (SRGI2013, geo 2D)",
+    "vertical": "20036 (INAGeoid2020 v2 height)",
+    "compound": "20043 (SRGI2013 + INAGeoid2020 v2 height)",
+    "match": [
+      "Indonesia"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Iran",
+    "horizontal": "4154 (ED50(ED77), geo 2D) / 2058–2061 (ED50(ED77) / UTM zone 38N–41N)",
+    "vertical": "5752 (Bandar Abbas height)",
+    "compound": "—",
+    "match": [
+      "Iran"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Israel",
+    "horizontal": "2039 (Israel 1993 / Israeli TM Grid, projected)",
+    "vertical": "— (no vertical CRS registered)",
+    "compound": "—",
+    "match": [
+      "Israel"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Japan",
+    "horizontal": "6668 (JGD2011, geo 2D)",
+    "vertical": "6695 (JGD2011 (vertical) height)",
+    "compound": "6697 (JGD2011 + JGD2011 (vertical) height)",
+    "match": [
+      "Japan"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Malaysia",
+    "horizontal": "4742 (GDM2000, geo 2D)",
+    "vertical": "— (no vertical CRS registered)",
+    "compound": "—",
+    "match": [
+      "Malaysia"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Pakistan",
+    "horizontal": "4145 (Kalianpur 1962, geo 2D) / 24311–24313 (Kalianpur 1962 / UTM zone 41N–43N)",
+    "vertical": "— (no vertical CRS registered)",
+    "compound": "—",
+    "match": [
+      "Pakistan"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Philippines",
+    "horizontal": "4683 (PRS92, geo 2D)",
+    "vertical": "— (no vertical CRS registered)",
+    "compound": "—",
+    "match": [
+      "Philippines"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Saudi Arabia",
+    "horizontal": "9333 (KSA-GRF17, geo 2D)",
+    "vertical": "9335 (KSA-VRF14 height)",
+    "compound": "9520 (KSA-GRF17 + KSA-VRF14 height)",
+    "match": [
+      "Saudi Arabia"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Singapore",
+    "horizontal": "3414 (SVY21 / Singapore TM, projected)",
+    "vertical": "6916 (SHD height)",
+    "compound": "6927 (SVY21 / Singapore TM + SHD height)",
+    "match": [
+      "Singapore"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "South Korea",
+    "horizontal": "5179 (KGD2002 / Unified CS, projected)",
+    "vertical": "5193 (KVD1964 height)",
+    "compound": "10365 (KGD2002 + KVD1964 height)",
+    "match": [
+      "South Korea"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Thailand",
+    "horizontal": "4240 (Indian 1975, geo 2D) / 24047–24048 (Indian 1975 / UTM zone 47N–48N)",
+    "vertical": "—",
+    "compound": "—",
+    "match": [
+      "Thailand"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "United Arab Emirates",
+    "horizontal": "4303 (TC(1948), geo 2D) / 30339–30340 (TC(1948) / UTM zone 39N–40N)",
+    "vertical": "5843 (Ras Ghumays height)",
+    "compound": "—",
+    "match": [
+      "United Arab Emirates"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Vietnam",
+    "horizontal": "4756 (VN-2000, geo 2D)",
+    "vertical": "5727 (Hon Dau 1992 height)",
+    "compound": "—",
+    "match": [
+      "Vietnam"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Australia (GDA94)",
+    "horizontal": "4283 (GDA94, geo 2D)",
+    "vertical": "5711 (AHD height)",
+    "compound": "9464 (GDA94 + AHD height)",
+    "match": [
+      "Australia"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Australia (GDA2020)",
+    "horizontal": "7844 (GDA2020, geo 2D)",
+    "vertical": "9458 (AVWS height)",
+    "compound": "9462 (GDA2020 + AVWS height)",
+    "match": [
+      "Australia"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "American Samoa",
+    "horizontal": "6322 (NAD83(PA11), geo 2D)",
+    "vertical": "6643 (ASVD02 height)",
+    "compound": "9526 (NAD83(PA11) + ASVD02 height)",
+    "match": [
+      "American Samoa"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "Guam",
+    "horizontal": "6637 (NAD83(MA11) / Guam Map Grid, projected)",
+    "vertical": "6644 (GUVD04 height)",
+    "compound": "9524 (NAD83(MA11) + GUVD04 height)",
+    "match": [
+      "Guam"
+    ],
+    "bbox": null
+  },
+  {
+    "name": "New Zealand",
+    "horizontal": "4167 (NZGD2000, geo 2D) / 2193 (NZGD2000 / NZTM2000, projected)",
+    "vertical": "7839 (NZVD2016 height)",
+    "compound": "9528 (NZGD2000 + NZVD2016 height)",
+    "match": [
+      "New Zealand"
+    ],
+    "bbox": null
+  }
+];
+
+// Natural Earth 1:50m admin-0 countries (includes dependencies as separate features)
+const COUNTRIES_URL = "https://cdn.jsdelivr.net/gh/martynafford/natural-earth-geojson/50m/cultural/ne_50m_admin_0_countries.json";
+
+// Build a lookup: ADMIN name -> [regions]
+const byAdmin = {};
+REGIONS.forEach(r => {
+  (r.match || []).forEach(name => {
+    if (!byAdmin[name]) byAdmin[name] = [];
+    byAdmin[name].push(r);
+  });
+});
+
+// Regions with a bounding-box override (sub-national areas not separated in the country polygons)
+const bboxRegions = REGIONS.filter(r => r.bbox);
+
+function findBboxMatches(lng, lat) {
+  return bboxRegions.filter(r => {
+    const [minLng, minLat, maxLng, maxLat] = r.bbox;
+    return lng >= minLng && lng <= maxLng && lat >= minLat && lat <= maxLat;
+  });
+}
+
+const map = new maplibregl.Map({
+  container: "map",
+  style: "https://demotiles.maplibre.org/style.json",
+  center: [10, 25],
+  zoom: 2
+});
+
+map.addControl(new maplibregl.NavigationControl(), "top-right");
+
+map.on("load", () => {
+  map.addSource("countries", {
+    type: "geojson",
+    data: COUNTRIES_URL
+  });
+
+  map.addLayer({
+    id: "countries-fill",
+    type: "fill",
+    source: "countries",
+    paint: {
+      "fill-color": "#3388ff",
+      "fill-opacity": 0.05
+    }
+  });
+
+  map.addLayer({
+    id: "countries-hover",
+    type: "fill",
+    source: "countries",
+    paint: {
+      "fill-color": "#3388ff",
+      "fill-opacity": [
+        "case",
+        ["boolean", ["feature-state", "hover"], false],
+        0.35,
+        0
+      ]
+    }
+  });
+
+  map.addLayer({
+    id: "countries-outline",
+    type: "line",
+    source: "countries",
+    paint: {
+      "line-color": "#3388ff",
+      "line-width": 0.6,
+      "line-opacity": 0.6
+    }
+  });
+
+  let hoveredId = null;
+
+  map.on("mousemove", "countries-fill", (e) => {
+    map.getCanvas().style.cursor = "pointer";
+    if (e.features.length > 0) {
+      if (hoveredId !== null) {
+        map.setFeatureState({ source: "countries", id: hoveredId }, { hover: false });
+      }
+      hoveredId = e.features[0].id;
+      map.setFeatureState({ source: "countries", id: hoveredId }, { hover: true });
+    }
+  });
+
+  map.on("mouseleave", "countries-fill", () => {
+    map.getCanvas().style.cursor = "";
+    if (hoveredId !== null) {
+      map.setFeatureState({ source: "countries", id: hoveredId }, { hover: false });
+    }
+    hoveredId = null;
+  });
+
+  map.on("click", (e) => {
+    const { lng, lat } = e.lngLat;
+
+    // 1. check sub-national bbox overrides first (Corsica, Canary Islands, Hawaii,
+    //    French Guiana, Reunion, BES islands - these are not separate polygons in the
+    //    50m country dataset)
+    let matches = findBboxMatches(lng, lat);
+
+    // 2. fall back to the country polygon clicked on
+    let adminName = null;
+    if (matches.length === 0) {
+      const features = map.queryRenderedFeatures(e.point, { layers: ["countries-fill"] });
+      if (features.length > 0) {
+        adminName = features[0].properties.ADMIN || features[0].properties.NAME;
+        matches = byAdmin[adminName] || [];
+      }
+    }
+
+    let html;
+    if (matches.length > 0) {
+      html = matches.map(r => `
+        <div class="region-block">
+          <h3>${r.name}</h3>
+          <table>
+            <tr><td class="label">Horizontal</td><td>${r.horizontal}</td></tr>
+            <tr><td class="label">Vertical</td><td>${r.vertical}</td></tr>
+            <tr><td class="label">Compound</td><td>${r.compound}</td></tr>
+          </table>
+        </div>
+      `).join("");
+    } else {
+      const label = adminName || "this location";
+      html = `<div class="region-block"><p>No EPSG data available for <b>${label}</b> in this overview.</p></div>`;
+    }
+
+    new maplibregl.Popup({ maxWidth: "320px" })
+      .setLngLat(e.lngLat)
+      .setHTML(html)
+      .addTo(map);
+  });
+});
+</script>
+</body>
+</html>
