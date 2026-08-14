@@ -60,6 +60,36 @@ location — a local offset of about **+32 cm** between the German and Swiss hei
 at this point on the border, in the same order of magnitude as the historical 27 cm
 Marseille/Amsterdam figure quoted for the Laufenburg bridge (see above).
 
+## Worked example: computing the BE–NL offset at Baarle-Nassau
+
+Same approach, this time at the Belgian–Dutch border near Baarle-Nassau/Baarle-Hertog
+(~51.44°N, 4.93°E), from the Belgian compound `EPSG:6190` (BD72 / Belgian Lambert 72 + Ostend
+height) to the Dutch compound `EPSG:7415` (Amersfoort / RD New + NAP height):
+
+```bash
+# 1. Get Belgian Lambert 72 easting/northing for the point (from lon/lat 4.93 / 51.44):
+echo "51.44 4.93" | cs2cs -d 4 EPSG:4326 EPSG:31370
+# 189026.4341  236853.1764
+
+# 2. Transform the Belgian compound CRS coordinate (with height 40.0000 m) directly
+#    to the Dutch compound CRS:
+echo "189026.4341 236853.1764 40.0000" | cs2cs -d 4 EPSG:6190 EPSG:7415
+# 104400.2492  379794.8889  37.6881
+```
+
+An input height of 40.0000 m (Belgian Ostend height) becomes 37.6881 m (Dutch NAP height) at
+this location — a local offset of about **−2.3 m**: the Ostend reference reads about 2.3 m
+higher than NAP at this point. This is a much larger offset than the DE–CH or DE–EU examples
+above, because Ostend and Amsterdam are both North Sea tide gauges but with a long-known,
+comparatively large mean-level difference (this is also the exact reason the Netherlands and
+Belgium each maintain their own separate national height network rather than sharing one).
+
+Check with `projinfo -s EPSG:6190 -t EPSG:7415 --spatial-test intersects --summary` that the
+operation `cs2cs` picked (accuracy "2.2 m", combining "Ostend height to EVRF2000 height" and
+"NAP height to EVRF2000 height") is a real, non-ballpark operation and not a fallback.
+
+
+
 **Disclaimer**: the offsets above are approximate, rounded, order-of-magnitude figures meant
 to illustrate why vertical datums matter. They should not be used directly for engineering or
 surveying transformations — always use the official national/EUREF transformation grids for
