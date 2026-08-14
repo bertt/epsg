@@ -66,7 +66,7 @@ For approximate height offsets between other neighboring countries' vertical dat
 | Czechia               | 5515 (S-JTSK/05 / Modified Krovak, projected)    | — (Baltic 1957 height not separately registered) | 11311 (ETRS89-CZE [2007] + Baltic 1957 height) |
 | Denmark               | 4095 (ETRS89 / DKTM3, projected)                 | 5799 (DVR90 height)                      | 4099 (ETRS89 / DKTM3 + DVR90 height) |
 | Estonia               | 3301 (Estonian CS of 1997, projected)            | 9663 (EH2000 height)                     | — |
-| Europe (ETRS89)       | 4936 (ETRS89, geocentric) / 4258 (geo 2D)        | —                                          | 4937 (ETRS89, geographic 3D) |
+| Europe (ETRS89)       | 4936 (ETRS89, geocentric) / 4258 (geo 2D)        | 5621 (EVRF2007 height)                    | 4937 (ETRS89, geographic 3D) / 7423 (ETRS89 + EVRF2007 height) |
 | Finland               | 3067 (ETRS89-FIN / TM35FIN(E,N), projected)      | 3900 (N2000 height)                      | 3903 (ETRS89-FIN / TM35FIN(N,E) + N2000 height) |
 | France (mainland)     | 2154 (ETRS89-FRA / Lambert-93, projected)        | 5720 (NGF-IGN69 height)                  | 5698 (ETRS89-FRA / Lambert-93 + NGF-IGN69 height) |
 | France - Corsica      | 2154 (ETRS89-FRA / Lambert-93, projected)        | 5721 (NGF-IGN78 height)                  | 5699 (ETRS89-FRA / Lambert-93 + NGF-IGN78 height) |
