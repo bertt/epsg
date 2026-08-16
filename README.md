@@ -58,6 +58,9 @@ For approximate height offsets between other neighboring countries' vertical dat
 For countries and territories that have no dedicated EPSG-registered CRS at all, see
 [`countries-without-epsg.md`](countries-without-epsg.md).
 
+For deprecated/vendor-specific variants of the Web Mercator projection (e.g. Google's informal
+`900913` and Esri's `102100`), see [`web-mercator-variants.md`](web-mercator-variants.md).
+
 ## Europe
 
 | Area                  | Horizontal (name)                                | Vertical (name)                          | Compound (name) |
@@ -157,18 +160,15 @@ For countries and territories that have no dedicated EPSG-registered CRS at all,
 | Bonaire               | 10762 (Bonaire 2004, geo 2D)                     | 10763 (Bonaire height)                   | 10765 (Bonaire 2004 + Bonaire height) |
 | Sint Eustatius        | 10736 (Sint Eustatius, geo 2D)                   | 10740 (Sint Eustatius height)             | 10741 (Sint Eustatius + Sint Eustatius height) |
 | Saba                  | 10636 (Saba, geo 2D)                             | 10642 (Saba height)                      | 10643 (Saba + Saba height) |
-| Curaçao               | ESRI:37000 (Curacao_1951, geo 2D) / ESRI:103983 (UTM zone 19N, projected) — no EPSG registration | — | — |
-| Aruba                 | no dedicated CRS registered; WGS84 (4326) / UTM zone 19N-20N is used in practice | — | — |
-| Sint Maarten          | no dedicated CRS registered; WGS84 (4326) / UTM zone 20N is used in practice | — | — |
 
 Notes:
 - Bonaire, Sint Eustatius and Saba ("Caribbean Netherlands" / BES islands) each have their own
   modern EPSG-registered geodetic and vertical reference systems (also available as older
   "BES2020" realizations and local DPnet projected grids, not listed here for brevity).
-- Curaçao only has a coordinate system registered under the **ESRI** authority (`Curacao_1951`),
-  not under EPSG.
-- Aruba and Sint Maarten have no dedicated coordinate reference system registered under EPSG or
-  ESRI in this dataset; WGS84-based UTM zones are commonly used in practice instead.
+- Curaçao, Aruba and Sint Maarten have no dedicated coordinate reference system registered under
+  EPSG in this dataset; WGS84-based UTM zones are commonly used in practice instead. See
+  [`countries-without-epsg.md`](countries-without-epsg.md) for details and vendor-specific
+  (non-EPSG) alternatives that exist for some of these.
 
 ## Africa
 
