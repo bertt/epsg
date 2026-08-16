@@ -269,6 +269,7 @@ Notes:
 | French Polynesia      | 2976 (Tahiti 52 / UTM zone 6S, projected); 2977 (Tahaa 54 / UTM zone 5S, projected) | 5607 (Bora Bora SAU 2001 height) | — |
 | Guam                  | 6637 (NAD83(MA11) / Guam Map Grid, projected)    | 6644 (GUVD04 height)                     | 9524 (NAD83(MA11) + GUVD04 height) |
 | Kiribati              | 4716 (Phoenix Islands 1966, geo 2D)              | — | — |
+| Marshall Islands      | 4732 (Marshall Islands 1960, geo 2D)             | — | — |
 | Micronesia            | 3295 (Guam 1963 / Yap Islands, projected)        | — | — |
 | New Caledonia         | 2981 (IGN56 Lifou / UTM zone 58S, projected); 2995 (IGN53 Mare / UTM zone 58S, projected) | 9351 (NGNC08 height) | 10318 (RGNC15 (lon-lat) + NGNC08 height) |
 | New Zealand           | 4167 (NZGD2000, geo 2D) / 2193 (NZGD2000 / NZTM2000, projected) | 7839 (NZVD2016 height)     | 9528 (NZGD2000 + NZVD2016 height) |

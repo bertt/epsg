@@ -38,7 +38,6 @@ country; the zone(s) below are the ones that cover most of the country's territo
 | Lesotho                                  | WGS84 / UTM zone 35S (EPSG:32735) | — |
 | Malawi                                   | WGS84 / UTM zone 36S (EPSG:32736) | — |
 | Mali                                     | WGS84 / UTM zone 29N–31N | — |
-| Marshall Islands                         | WGS84 / UTM zone 58N–59N | ESRI:37229 (GCS_Wake_Eniwetok_1960); ESRI:104113 (GCS_Majuro); ESRI:102959/102960 (NAD83(PA11) UTM 58N/59N) |
 | Mongolia                                 | WGS84 / UTM zone 46N–50N | ESRI:104134/104135 (MONREF 1997 / MSK 1942); ESRI:102224–102228 (MONREF 1997 UTM zone 46N–50N) |
 | Myanmar                                  | WGS84 / UTM zone 46N–47N | — |
 | Nauru                                    | WGS84 / UTM zone 58N (EPSG:32658) | — |
