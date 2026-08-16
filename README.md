@@ -84,7 +84,7 @@ For countries and territories that have no dedicated EPSG-registered CRS at all,
 | Guernsey              | 3108 (ETRS89 / Guernsey Grid, projected)         | —                                        | — |
 | Hungary               | 23700 (HD72 / EOV, projected)                    | 5787 (EOMA 1980 height)                  | 10660 (HD72 / EOV + EOMA 1980 height) |
 | Iceland               | 3057 (ISN93 / Lambert 1993, projected)           | 8089 (ISH2004 height)                    | 9951 (ISN93 / Lambert 1993 + ISH2004 height) |
-| Ireland               | 29902 (TM65 / Irish Grid, projected)             | — (no vertical CRS registered)           | — |
+| Ireland               | 29902 (TM65 / Irish Grid, projected)             | —            | — |
 | Isle of Man           | — (no EPSG-registered CRS; WGS84/UTM used in practice) | 5750 (Douglas height) | 9429 (ETRS89 + Douglas height) |
 | Italy                 | 6706 (ETRS89-ITA [RDN2008], geo 2D)              | 5214 (Genoa 1942 height)                 | 9723 (ETRS89-ITA [RDN2008] + Genoa 1942 height) |
 | Jersey                | 3109 (ETRS89 / Jersey Transverse Mercator, projected) | — | — |
@@ -99,7 +99,7 @@ For countries and territories that have no dedicated EPSG-registered CRS at all,
 | Poland                | 2180 (ETRS89 / PL-1992, projected)               | 9650 (Baltic 1986 height)                | 9656 (ETRS89-POL [PL-ETRF2000] + Baltic 1986 height) |
 | Portugal (mainland)   | 3763 (ETRS89-PRT [1995] / Portugal TM06)         | 5780 (Cascais height)                    | 10545 (ETRS89-PRT [1995] + Cascais height) |
 | Romania               | 3844 (Pulkovo 1942(58) / Stereo70, projected)    | 5781 (Constanta height)                  | — |
-| Russia                | 7683 (GSK-2011, geo 2D)                          | — (no vertical CRS registered)           | — |
+| Russia                | 7683 (GSK-2011, geo 2D)                          | —            | — |
 | Serbia                | 8682 (ETRS89-SRB [STRS00] / UTM zone 34N, projected) | 8691 (SRB_VRS12 height)              | — |
 | Slovakia              | 8352 (S-JTSK [JTSK03] / Krovak, projected)       | — (Baltic 1957 height not separately registered) | 11312 (ETRS89-SVK [SKTRF09] + Baltic 1957 height) |
 | Slovenia              | 4765 (ETRS89-SVN [D96], geo 2D)                  | 8690 (SVS2010 height)                    | 10245 (ETRS89-SVN [D96] + SVS2010 height) |
@@ -108,7 +108,7 @@ For countries and territories that have no dedicated EPSG-registered CRS at all,
 | Sweden                | 3006 (ETRS89-SWE [SWEREF 99 TM], projected)      | 5613 (RH2000 height)                     | 5628 (ETRS89-SWE [SWEREF 99] + RH2000 height) |
 | Switzerland           | 2056 (CH1903+ / LV95, projected)                 | 5729 (LHN95 height)                      | — |
 | Turkey                | 5636 (TUREF / LAEA Europe, projected)            | 5775 (Antalya height)                    | — |
-| Ukraine               | 5561 (UCS-2000, geo 2D)                          | — (no vertical CRS registered)           | — |
+| Ukraine               | 5561 (UCS-2000, geo 2D)                          | —            | — |
 | United Kingdom        | 27700 (OSGB36 / British National Grid, projected)| 5701 (ODN height)                        | 7405 (OSGB36 / British National Grid + ODN height) |
 
 ## Americas
@@ -120,16 +120,16 @@ For countries and territories that have no dedicated EPSG-registered CRS at all,
 | Barbados              | 21291 (Barbados 1938 / British West Indies Grid, projected); 21292 (Barbados 1938 / Barbados National Grid, projected) | — | — |
 | Belize                | 5589 (Sibun Gorge 1922 / Colony Grid, projected) | — | — |
 | Bermuda               | 3769 (Bermuda 1957 / UTM zone 20N, projected); 3770 (BDA2000 / Bermuda 2000 National Grid, projected) | — | — |
-| Bolivia               | 5354 (MARGEN, geo 2D)                            | — (no vertical CRS registered)           | — |
-| Brazil                | 4674 (SIRGAS 2000, geo 2D)                       | — (no vertical CRS registered)           | — |
+| Bolivia               | 5354 (MARGEN, geo 2D)                            | —            | — |
+| Brazil                | 4674 (SIRGAS 2000, geo 2D)                       | —            | — |
 | Canada                | 3979 (NAD83(CSRS) / Canada Atlas Lambert)        | 6647 (CGVD2013(CGG2013) height)          | 6649 (NAD83(CSRS) + CGVD2013(CGG2013) height) |
 | Cayman Islands        | 6128 (Grand Cayman National Grid 1959); 6129 (Sister Islands National Grid 1961); 6391 (Cayman Islands National Grid 2011) | 6132 (CBVD61 height (ft)) | 9504 (CIGD11 + LCVD61 height (ft)) |
-| Chile                 | 20041 (SIRGAS-Chile 2021, geo 2D)                | — (no vertical CRS registered)           | — |
-| Colombia              | 20046 (MAGNA-SIRGAS 2018, geo 2D)                | — (no vertical CRS registered)           | 9377 (MAGNA-SIRGAS 2018 / Origen-Nacional, projected) |
+| Chile                 | 20041 (SIRGAS-Chile 2021, geo 2D)                | —            | — |
+| Colombia              | 20046 (MAGNA-SIRGAS 2018, geo 2D)                | —            | 9377 (MAGNA-SIRGAS 2018 / Origen-Nacional, projected) |
 | Costa Rica            | 5456 (Ocotepeque 1935 / Costa Rica Norte, projected); 5457 (Ocotepeque 1935 / Costa Rica Sur, projected) | 8911 (DACR52 height) | 8912 (CR-SIRGAS epoch 2014.59 / CRTM05 + DACR52 height) |
 | Cuba                  | 3795 (NAD27 / Cuba Norte, projected); 3796 (NAD27 / Cuba Sur, projected) | — | — |
 | Dominica              | 2002 (Dominica 1945 / British West Indies Grid, projected) | — | — |
-| Ecuador               | 4248 (PSAD56, geo 2D, shared Andean datum) / 24817 & 24877 (PSAD56 / UTM zone 17N/17S) | — (no vertical CRS registered) | — |
+| Ecuador               | 4248 (PSAD56, geo 2D, shared Andean datum) / 24817 & 24877 (PSAD56 / UTM zone 17N/17S) | —  | — |
 | El Salvador           | 5460 (Ocotepeque 1935 / El Salvador Lambert, projected) | — | — |
 | French Guiana         | 2972 (RGFG95 / UTM zone 22N, projected)          | 5755 (NGG1977 height)                    | 9530 (RGFG95 + NGG1977 height) |
 | Grenada               | 2003 (Grenada 1953 / British West Indies Grid, projected) | — | — |
@@ -137,18 +137,18 @@ For countries and territories that have no dedicated EPSG-registered CRS at all,
 | Guatemala             | 5459 (Ocotepeque 1935 / Guatemala Sur, projected); 5559 (Ocotepeque 1935 / Guatemala Norte, projected) | — | — |
 | Jamaica               | 3448 (JAD2001 / Jamaica Metric Grid, projected); 3449 (JAD2001 / UTM zone 17N, projected) | — | — |
 | Martinique            | 2973 (Martinique 1938 / UTM zone 20N, projected) | 5794 (Martinique 1955 height)            | 10633 (RGAF09 / UTM zone 20N + Martinique 1987 height) |
-| Mexico                | 6365 (Mexico ITRF2008, geo 2D)                   | — (no vertical CRS registered)           | — |
+| Mexico                | 6365 (Mexico ITRF2008, geo 2D)                   | —            | — |
 | Montserrat            | 2004 (Montserrat 1958 / British West Indies Grid, projected) | — | — |
 | Nicaragua             | 5461 (Ocotepeque 1935 / Nicaragua Norte, projected); 5462 (Ocotepeque 1935 / Nicaragua Sur, projected) | — | — |
 | Panama                | 5469 (Panama-Colon 1911 / Panama Lambert, projected); 5472 (Panama-Colon 1911 / Panama Polyconic, projected) | — | — |
-| Peru                  | 5373 (Peru96, geo 2D)                            | — (no vertical CRS registered)           | — |
+| Peru                  | 5373 (Peru96, geo 2D)                            | —            | — |
 | Puerto Rico           | 6318 (NAD83(2011), geo 2D)                       | 6641 (PRVD02 height)                     | 9522 (NAD83(2011) + PRVD02 height) |
 | Suriname              | 31121 (Zanderij / UTM zone 21N, projected); 31154 (Zanderij / TM 54 NW, projected) | — | — |
 | Trinidad and Tobago   | 2066 (Mount Dillon / Tobago Grid, projected); 2067 (Naparima 1955 / UTM zone 20N, projected) | — | — |
 | United States (CONUS) | 4269 (NAD83, geo 2D) / 5070 (NAD83 / Conus Albers, projected) | 5703 (NAVD88 height)        | 5498 (NAD83 + NAVD88 height) |
 | United States - Hawaii| 6628–6632 (NAD83(PA11) / Hawaii zone 1–5)        | 5703 (NAVD88 height, generic US)         | — |
-| Uruguay               | 5381 (SIRGAS-ROU98, geo 2D)                      | — (no vertical CRS registered)           | — |
-| Venezuela             | 4189 (REGVEN, geo 2D)                            | — (no vertical CRS registered)           | — |
+| Uruguay               | 5381 (SIRGAS-ROU98, geo 2D)                      | —            | — |
+| Venezuela             | 4189 (REGVEN, geo 2D)                            | —            | — |
 
 ## Caribbean (Dutch Antilles)
 
@@ -180,7 +180,7 @@ Notes:
 | Cameroon              | 2215 (Manoca 1962 / UTM zone 32N, projected); 2312 (Garoua / UTM zone 33N, projected) | — | — |
 | Comoros               | 2999 (Grand Comoros / UTM zone 38S, projected)   | — | — |
 | Djibouti              | 4713 (Ayabelle Lighthouse, geo 2D)               | — | — |
-| Egypt                 | 4199 (Egypt 1930, geo 2D)                        | — (no vertical CRS registered)           | — |
+| Egypt                 | 4199 (Egypt 1930, geo 2D)                        | —            | — |
 | Equatorial Guinea     | 6883 (Bioko, geo 2D)                             | — | — |
 | Eritrea               | 26237 (Massawa / UTM zone 37N, projected)        | — | — |
 | Ethiopia              | 20138 (Adindan / UTM zone 38N, projected)        | — | — |
@@ -230,7 +230,7 @@ Notes:
 | Indonesia             | 9470 (SRGI2013, geo 2D)                          | 20036 (INAGeoid2020 v2 height)           | 20043 (SRGI2013 + INAGeoid2020 v2 height) |
 | Iran                  | 4154 (ED50(ED77), geo 2D) / 2058–2061 (ED50(ED77) / UTM zone 38N–41N) | 5752 (Bandar Abbas height) | — |
 | Iraq                  | 3391 (Karbala 1979 / UTM zone 37N, projected); 3392 (Karbala 1979 / UTM zone 38N, projected) | 3886 (Fao 1979 height) | — |
-| Israel                | 2039 (Israel 1993 / Israeli TM Grid, projected)  | — (no vertical CRS registered)            | — |
+| Israel                | 2039 (Israel 1993 / Israeli TM Grid, projected)  | —             | — |
 | Japan                 | 6668 (JGD2011, geo 2D)                           | 6695 (JGD2011 (vertical) height)         | 6697 (JGD2011 + JGD2011 (vertical) height) |
 | Jordan                | 3066 (ED50 / Jordan TM, projected)                | — | — |
 | Kazakhstan            | 10942–10949 (QazTRF-23 / Gauss-Kruger zone 8–15, projected) | — | — |
@@ -239,12 +239,12 @@ Notes:
 | Laos                  | 4678 (Lao 1997, geo 2D)                          | — | — |
 | Lebanon               | 6882 (Bekaa Valley 1920, geo 2D)                 | — | — |
 | Macao                 | 8433 (Macao 1920 / Macao Grid, projected)        | 8434 (Macao height)                      | — |
-| Malaysia              | 4742 (GDM2000, geo 2D)                           | — (no vertical CRS registered)            | — |
+| Malaysia              | 4742 (GDM2000, geo 2D)                           | —             | — |
 | Maldives              | 4684 (Gan 1970, geo 2D)                          | — | — |
 | Nepal                 | 6207 (Nepal 1981, geo 2D)                        | — | — |
 | Oman                  | 3439 (PSD93 / UTM zone 39N, projected); 3440 (PSD93 / UTM zone 40N, projected) | 5725 (Fahud HD height) | 7410 (PSHD93) |
-| Pakistan              | 4145 (Kalianpur 1962, geo 2D) / 24311–24313 (Kalianpur 1962 / UTM zone 41N–43N) | — (no vertical CRS registered) | — |
-| Philippines           | 4683 (PRS92, geo 2D)                             | — (no vertical CRS registered)            | — |
+| Pakistan              | 4145 (Kalianpur 1962, geo 2D) / 24311–24313 (Kalianpur 1962 / UTM zone 41N–43N) | —  | — |
+| Philippines           | 4683 (PRS92, geo 2D)                             | —             | — |
 | Qatar                 | 2099 (Qatar 1948 / Qatar Grid, projected); 2932 (QND95 / Qatar National Grid, projected) | — | — |
 | Saudi Arabia          | 9333 (KSA-GRF17, geo 2D)                         | 9335 (KSA-VRF14 height)                  | 9520 (KSA-GRF17 + KSA-VRF14 height) |
 | Singapore             | 3414 (SVY21 / Singapore TM, projected)           | 6916 (SHD height)                        | 6927 (SVY21 / Singapore TM + SHD height) |
