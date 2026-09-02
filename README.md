@@ -85,7 +85,7 @@ For deprecated/vendor-specific variants of the Web Mercator projection (e.g. Goo
 | Greece                | 2100 (GGRS87 / Greek Grid, projected)            | 5716 (Piraeus height)                    | — |
 | Greenland             | 2216 (Qoornoq 1927 / UTM zone 22N, projected); 2217 (Qoornoq 1927 / UTM zone 23N, projected) | 10565 (GLLMSL(2022) height) | 10652 (GR96 + GLLAT(2023) depth) |
 | Guernsey              | 3108 (ETRS89 / Guernsey Grid, projected)         | —                                        | — |
-| Hungary               | 23700 (HD72 / EOV, projected)                    | 5787 (EOMA 1980 height)                  | 10660 (HD72 / EOV + EOMA 1980 height) |
+| Hungary               | 23700 (HD72 / EOV, projected)                    | 5787 (EOMA 1980 height)                  | 10660 (HD72 / EOV + EOMA 1980 height); 10659 (ETRS89-HUN [ETRF2000] + EOMA 1980 height) |
 | Iceland               | 3057 (ISN93 / Lambert 1993, projected)           | 8089 (ISH2004 height)                    | 9951 (ISN93 / Lambert 1993 + ISH2004 height) |
 | Ireland               | 29902 (TM65 / Irish Grid, projected)             | —            | — |
 | Isle of Man           | — (no EPSG-registered CRS; WGS84/UTM used in practice) | 5750 (Douglas height) | 9429 (ETRS89 + Douglas height) |
@@ -96,7 +96,7 @@ For deprecated/vendor-specific variants of the Web Mercator projection (e.g. Goo
 | Lithuania             | 3346 (ETRS89-LTU [LKS94] / Lithuania TM, projected) | 9666 (LAS07 height)                    | — |
 | Luxembourg            | 2169 (LUREF / Luxembourg TM, projected)          | 5774 (NG95 height)                       | 9897 (LUREF / Luxembourg TM + NG95 height) |
 | Moldova               | 4026 (ETRS89-MDA [MOLDREF99] / Moldova TM, projected); 4037 (WGS 84 / TMzn35N, projected) | — | — |
-| Netherlands           | 28992 (Amersfoort / RD New, projected)           | 5709 (NAP height)                        | 7415 (Amersfoort / RD New + NAP height) |
+| Netherlands           | 28992 (Amersfoort / RD New, projected)           | 5709 (NAP height)                        | 7415 (Amersfoort / RD New + NAP height); 9286 (ETRS89-NLD [AGRS2010] + NAP height) |
 | North Macedonia       | 6204 (Macedonia State Coordinate System, projected); 9945 (Macedonia State Coordinate System truncated, projected) | — | — |
 | Norway                | 25832 (ETRS89-NOR, projected) / 10875 (geo 2D)   | 5941 (NN2000 height)                     | 5942 (ETRS89-NOR [EUREF89] + NN2000 height) |
 | Poland                | 2180 (ETRS89 / PL-1992, projected)               | 9650 (Baltic 1986 height)                | 9656 (ETRS89-POL [PL-ETRF2000] + Baltic 1986 height) |
