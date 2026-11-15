@@ -282,13 +282,50 @@ Notes:
 
 ## World
 
-| Description                       | Code |
-| ----------------------------------:|:----:|
-| World geocentric (x,y,z)          | 4978 |
-| World Web mercator                | 3857 |
+| Description                        | Code |
+| -----------------------------------|:----:|
+| World geocentric (x,y,z) - WGS84   | 4978 |
+| World Web Mercator                 | 3857 |
 | World geographic 2D - WGS84        | 4326 |
 | World geographic 3D - WGS84        | 4979 |
-| EGM84 height                       | 5798 |
-| EGM96 height                       | 5773 |
-| EGM2008 height                     | 3855 |
-| EGM2020 height                     | ?    |
+
+Vertical references (EGM84/96/2008/2020, MSL, tidal datums) are listed in the next section.
+## World vertical references
+
+Global vertical CRSs from the EPSG dataset (v12.049). The *Height type* column states whether
+heights are relative to a geoid / mean sea level (orthometric-like, physical) or to the
+ellipsoid (purely geometric, e.g. GNSS height).
+
+| Name                          | Code | Height type                         | Reference surface                |
+| ------------------------------|:----:|-------------------------------------|----------------------------------|
+| EGM84 height                  | 5798 | Geoid height (orthometric)          | EGM84 geoid                      |
+| EGM96 height                  | 5773 | Geoid height (orthometric)          | EGM96 geoid                      |
+| EGM2008 height                | 3855 | Geoid height (orthometric)          | EGM2008 geoid                    |
+| EGM2020 height                | —    | Geoid height (not in EPSG v12.049)  | EGM2020 geoid                    |
+| WGS 84 (geographic 3D)        | 4979 | **Ellipsoidal height**              | WGS 84 ellipsoid                 |
+| WGS 84 (geocentric)           | 4978 | Ellipsoidal (Z derived from XYZ)    | WGS 84 ellipsoid                 |
+| MSL height                    | 5714 | Geoid / mean sea level (height)     | Mean Sea Level                   |
+| MSL depth                     | 5715 | Geoid / mean sea level (depth)      | Mean Sea Level                   |
+| MSL height (ft)               | 8050 | Geoid / mean sea level (height, ft) | Mean Sea Level                   |
+| MSL depth (ft)                | 8051 | Geoid / mean sea level (depth, ft)  | Mean Sea Level                   |
+| Instantaneous Water Level height | 5829 | Water level (height)             | Instantaneous Water Level        |
+| Instantaneous Water Level depth  | 5831 | Water level (depth)              | Instantaneous Water Level        |
+
+Tidal datums (chart datums, neither geoid nor ellipsoid):
+
+| Name           | Code | Type  | Reference surface                  |
+| ---------------|:----:|-------|------------------------------------|
+| LAT depth      | 5861 | depth | Lowest Astronomical Tide           |
+| LLWLT depth    | 5862 | depth | Lower Low Water Large Tide         |
+| ISLW depth     | 5863 | depth | Indian Spring Low Water            |
+| MLLWS depth    | 5864 | depth | Mean Lower Low Water Spring Tides  |
+| MLWS depth     | 5865 | depth | Mean Low Water Spring Tides        |
+| MLLW depth     | 5866 | depth | Mean Lower Low Water               |
+| MLW depth      | 5867 | depth | Mean Low Water                     |
+| Low Water depth| 5873 | depth | Low Water                          |
+| MHW height     | 5868 | height| Mean High Water                    |
+| MHHW height    | 5869 | height| Mean Higher High Water             |
+| MHWS height    | 5870 | height| Mean High Water Spring Tides       |
+| HHWLT height   | 5871 | height| Higher High Water Large Tide       |
+| HAT height     | 5872 | height| Highest Astronomical Tide          |
+| High Water height | 5874 | height | High Water                       |
